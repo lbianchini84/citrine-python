@@ -94,7 +94,7 @@ and persists that update.
     tungsten_dataset.register(sintering)
 
 
-Deleting
+Deleting Objects
 --------
 
 Deleting an object is a permanent action and cannot be undone, so do use caution when performing deletes!
@@ -104,7 +104,7 @@ In order for a delete to be successful, the following circumstances must be true
 1. The user has write access to the containing dataset
 2. Deleting the object won't invalidate or orphan other objects
 
-In the case that a delete fails, an error message will be returned indicating the point of failure.
+If one of these conditions is not satisfied the delete will fail, an error message will be returned indicating the point of failure.
 
 For example, any attempt to delete a ``MaterialSpec`` object that is referenced by a ``MaterialRun`` object will be unsuccessful because the ``MaterialRun`` would no longer have an associated ``MaterialSpec``.
 
